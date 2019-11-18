@@ -1,4 +1,4 @@
-alert("My program is alive!") 
+alert("Welcome!") 
 
 $(updateView)
 
