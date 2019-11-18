@@ -1,4 +1,4 @@
-alert("Welcome!") 
+alert("Hello there!) 
 
 $(updateView)
 
