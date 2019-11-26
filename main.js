@@ -8,8 +8,8 @@
 
 
 // //a memory location that never changes
-const BASE_URL = "http://zagster-service.herokuapp.com"
-// const PI = 3.14159
+// const BASE_URL = "http://zagster-service.herokuapp.com"
+// // const PI = 3.14159
 
 // //jQuery command. wait unitl web page loads call function 
 // //whose name is in parenthesis
@@ -48,25 +48,25 @@ const BASE_URL = "http://zagster-service.herokuapp.com"
 // console.log(year_list[2][11])
 // console.log(year_list[3][12])
 
-$(updateView)
+// $(updateView)
 
 // let years = []
 // let months2016 = []
 // let months2017 = []
 // let months2018 = []
 
-function updateView(){
-     $.getJSON(BASE_URL + "/rides/count", updateRidecount)
+// function updateView(){
+//      $.getJSON(BASE_URL + "/rides/count", updateRidecount)
 
     // $.when ($.getJSON(BASE_URL + "rides/count/per_month", perYear),
     // ).then(updateChart);
 }
 
-function updateRidecount(data) {
-    numberOfRides = data.count
-    console.log("count is " + numberOfRides)
-    $("h2#rideCount").html(numberOfRides)
-}
+// function updateRidecount(data) {
+//     numberOfRides = data.count
+//     console.log("count is " + numberOfRides)
+//     $("h2#rideCount").html(numberOfRides)
+// }
 
 // function perYear(data)
 
@@ -85,3 +85,40 @@ function updateRidecount(data) {
 // }
 // console.log("2018 data by months is easy " + months2018)
 // }
+const BASE_URL = "http://zagster-service.herokuapp.com"
+
+$(updateView)
+$(updateGraph)
+function updateView(){
+    $.getJSON(BASE_URL + "/rides/count", updateRidecount)
+
+
+}
+
+function updateRidecount(data) {
+   numberOfRides = data.count
+   console.log("count is " + numberOfRides)
+   $("h2#rideCount").html(numberOfRides)
+}
+
+function updateGraph(){ 
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+}
