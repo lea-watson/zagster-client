@@ -82,7 +82,7 @@ function updateChart() {
             datasets: [{
                 label: 'Zagster Number of Rides Per Month in 2017',
                 backgroundColor: 'rgb(0, 99, 132)',
-                borderColor: 'rgb(0, 99, 132)',
+                borderColor: 'rgb(0, 0, 0)',
                 //data: [0, 10, 5, 2, 20, 30, 45]
                 data: my_data  //make the chart use your my_data array
             }]
